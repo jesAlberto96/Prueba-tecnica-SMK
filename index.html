@@ -7,35 +7,38 @@
     <link rel="stylesheet" href="public/css/bootstrap.min.css">
     <link rel="stylesheet" href="public/css/bootstrap-grid.min.css">
     <link rel="stylesheet" href="public/css/app.maps.coffee.css">
-
-	<title>Coffee maps</title>
 	
+	<title>Coffee maps</title>
+
 	<link rel="stylesheet" href="public/Fonts/Helvetica.ttc">
 	<link rel="stylesheet" href="public/Fonts/Nexa Bold.otf">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 	<body>
-		<div id="mapsCoffe" class="appMapsCoffe">
-			<div class="containerMain">
-				<div class="titleCoffee">
+		<div id="appMapsCoffe">
+			<div class="appMapsContainer">
+				<div class="appMapsTitle">
 					<h3>UN CAFÉ CERCA A TI</h3>
 				</div>
-				<div id="map" class="imageMaps"></div>
-				<div class="descriptionPlace">
-					<div id="nameCity" class="nameCityLocation">
+
+				<div id="appMap" class="appMapImage"></div>
+
+				<div class="appMapDescriptionPlace">
+					<div id="nameLocation" class="nameLocationPlace">
 						<i class="fas fa-location-arrow iconLocation"></i>
 					</div>
-					<h3 class="myLocation">Mi localización <i class="fas fa-map-marker-alt"></i></h3>
+					<h3 class="myLocationPlace">Mi localización <i class="fas fa-map-marker-alt"></i></h3>
 				</div>
-				<div class="weather">
+
+				<div class="appMapWeather">
 					<h2>Clima:</h2>
-					<table class="temperature">
-						<tr class="propertiesWeather">
+					<table class="weather">
+						<tr class="weatherProps">
 							<th class="titleProp">Temperatura</th>
 							<th class="titleProp">Humedad</th> 
 							<th class="titleProp">Descripción</th>
 						</tr>
-						<tr class="propertiesWeather">
+						<tr class="weatherProps">
 							<td id="temp" class="rowProp"></td>
 							<td id="humidity" class="rowProp"></td>
 							<td id="description" class="rowProp"></td>
@@ -44,8 +47,8 @@
 				</div>
 			</div>
 		</div>
-		<script src="public/js/axios.min.js"></script>
-		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB9ZwnBWmSvxcLLeyz-EEmhG9DBZHP004&callback=initMap&libraries=places" async defer></script>
-		<script src="public/js/app.maps.coffee.js"></script>
 	</body>
+	<script src="public/js/axios.min.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB9ZwnBWmSvxcLLeyz-EEmhG9DBZHP004&callback=initMap&libraries=places" async defer></script>
+	<script src="public/js/app.maps.coffee.js"></script>
 </html>
