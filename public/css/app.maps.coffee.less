@@ -2,7 +2,7 @@
     font-family: helvetica;
 }
 
-.appMapsCoffe{
+#appMapsCoffe{
     width: 96%;
     height: 100%;
     position: absolute;
@@ -12,15 +12,15 @@
     left: 0;
     margin: auto;
 
-    .containerMain{
+    .appMapsContainer{
         display: grid;
         grid-template-columns: repeat(12, 1fr);
         grid-template-rows: 6em 4em 1fr 40%;
         grid-gap: 1em;
         grid-template-rows: repeat(12, 8.3%);
         min-height: 100vh;
-        
-        .titleCoffee{
+
+        .appMapsTitle{
             align-items: center;
             display: flex;
             grid-row: 2 / span 1;
@@ -28,31 +28,31 @@
             font-size: 26px;
             font-weight: 700;
             justify-content: center;
+
+            h3{
+                border-bottom: 2px inset #CC3300;
+                font-size: 36px;
+                font-weight: 600;
+            }
         }
-        
-        .titleCoffee h3{
-            border-bottom: 2px inset #CC3300;
-            font-size: 36px;
-            font-weight: 600;
-        }
-        
-        .imageMaps{
+
+        .appMapImage{
             grid-row: 3 / span 4;
             grid-column: 2 / span 10;
         }
-        
-        .descriptionPlace{
+
+        .appMapDescriptionPlace{
             display: flex;
             font-size: 30px;
             justify-content: space-between;
             grid-row: 7 / span 1;
             grid-column: 2 / span 10;
 
-            .nameCityLocation{
+            .nameLocationPlace{
                 display: flex;
             }
 
-            .myLocation{
+            .myLocationPlace{
                 background-color: #CC3300;
                 color: white;
                 font-size: 22px;
@@ -61,26 +61,24 @@
             }
         }
         
-        
-        
         .iconLocation{
             color: #3366FF;
         }
-        
-        .weather{
+
+        .appMapWeather{
             grid-row: 8 / span 1;
             grid-column: 2 / span 10;
 
-            .temperature{
+            .weather{
                 grid-row: 4 / span 1;
                 grid-column: 2 / span 6;
                 margin-left: 5%;
 
-                .propertiesWeather :nth-child(2){
+                .weatherProps :nth-child(2){
                     border-right: 1px solid black;
                     border-left: 1px solid black;
                 }
-                  
+
                 .titleProp{
                     background-color: #CC3300;
                     font-weight: 600;
