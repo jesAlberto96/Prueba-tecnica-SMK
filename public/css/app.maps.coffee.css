@@ -1,7 +1,7 @@
 * {
   font-family: helvetica;
 }
-.appMapsCoffe {
+#appMapsCoffe {
   width: 96%;
   height: 100%;
   position: absolute;
@@ -11,7 +11,7 @@
   left: 0;
   margin: auto;
 }
-.appMapsCoffe .containerMain {
+#appMapsCoffe .appMapsContainer {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 6em 4em 1fr 40%;
@@ -19,7 +19,7 @@
   grid-template-rows: repeat(12, 8.3%);
   min-height: 100vh;
 }
-.appMapsCoffe .containerMain .titleCoffee {
+#appMapsCoffe .appMapsContainer .appMapsTitle {
   align-items: center;
   display: flex;
   grid-row: 2 / span 1;
@@ -28,54 +28,54 @@
   font-weight: 700;
   justify-content: center;
 }
-.appMapsCoffe .containerMain .titleCoffee h3 {
+#appMapsCoffe .appMapsContainer .appMapsTitle h3 {
   border-bottom: 2px inset #CC3300;
   font-size: 36px;
   font-weight: 600;
 }
-.appMapsCoffe .containerMain .imageMaps {
+#appMapsCoffe .appMapsContainer .appMapImage {
   grid-row: 3 / span 4;
   grid-column: 2 / span 10;
 }
-.appMapsCoffe .containerMain .descriptionPlace {
+#appMapsCoffe .appMapsContainer .appMapDescriptionPlace {
   display: flex;
   font-size: 30px;
   justify-content: space-between;
   grid-row: 7 / span 1;
   grid-column: 2 / span 10;
 }
-.appMapsCoffe .containerMain .descriptionPlace .nameCityLocation {
+#appMapsCoffe .appMapsContainer .appMapDescriptionPlace .nameLocationPlace {
   display: flex;
 }
-.appMapsCoffe .containerMain .descriptionPlace .myLocation {
+#appMapsCoffe .appMapsContainer .appMapDescriptionPlace .myLocationPlace {
   background-color: #CC3300;
   color: white;
   font-size: 22px;
   height: 67%;
   padding: 10px;
 }
-.appMapsCoffe .containerMain .iconLocation {
+#appMapsCoffe .appMapsContainer .iconLocation {
   color: #3366FF;
 }
-.appMapsCoffe .containerMain .weather {
+#appMapsCoffe .appMapsContainer .appMapWeather {
   grid-row: 8 / span 1;
   grid-column: 2 / span 10;
 }
-.appMapsCoffe .containerMain .weather .temperature {
+#appMapsCoffe .appMapsContainer .appMapWeather .weather {
   grid-row: 4 / span 1;
   grid-column: 2 / span 6;
   margin-left: 5%;
 }
-.appMapsCoffe .containerMain .weather .temperature .propertiesWeather :nth-child(2) {
+#appMapsCoffe .appMapsContainer .appMapWeather .weather .weatherProps :nth-child(2) {
   border-right: 1px solid black;
   border-left: 1px solid black;
 }
-.appMapsCoffe .containerMain .weather .temperature .titleProp {
+#appMapsCoffe .appMapsContainer .appMapWeather .weather .titleProp {
   background-color: #CC3300;
   font-weight: 600;
   padding: 2%;
 }
-.appMapsCoffe .containerMain .weather .temperature .rowProp {
+#appMapsCoffe .appMapsContainer .appMapWeather .weather .rowProp {
   text-align: center;
   font-weight: 600;
 }
