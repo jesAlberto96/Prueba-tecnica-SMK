@@ -1,14 +1,4 @@
 //DEFINITIONS··································································
-var map,
-    infowindow,
-    request,
-    service,
-    marker,
-    coffee,
-    $temp,
-    googleMaps,
-    $humidity,
-    $description;
 
 //HTML ELEMENTS································································  
     $temp = document.getElementById('temp');
