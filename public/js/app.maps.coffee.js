@@ -1,14 +1,26 @@
 //DEFINITIONS··································································
+var appMap,
+    infoMap,
+    request,
+    service,
+    marker,
+    coffee,
+    weather,
+    googleMaps,
+    $temp,
+    $humidity,
+    $description,
+    $nameLocation;
 
 //HTML ELEMENTS································································  
     $temp = document.getElementById('temp');
     $humidity = document.getElementById('humidity');
-    $nameCity = document.getElementById('nameCity');
     $description = document.getElementById('description');
+    $nameLocation = document.getElementById('nameLocation');
 
 //FUNCTIONS····································································
     function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
+        appMap = new google.maps.Map(document.getElementById('appMap'), {
             center: {lat: -34.397, lng: 150.644},
             zoom: 16,
             type: 'cafe',
@@ -17,26 +29,26 @@
 
     googleMaps = {
         settingLocation: function(geolocate) {
-            infowindow = new google.maps.InfoWindow({
-                map: map,
+            infoMap = new google.maps.InfoWindow({
+                map: appMap,
                 position: geolocate,
                 content: '<i class="fas fa-map-marker-alt iconLocation"> Su ubicación </i>',
             });
 
-            map.setCenter(geolocate);
+            appMap.setCenter(geolocate);
         }
     }
 
     coffee = {
         settingMarkers: function(place){
             marker = new google.maps.Marker({
-                map: map,
+                map: appMap,
                 position: place.geometry.location,
             });
 
             google.maps.event.addListener(marker, 'click', function() {
-                infowindow.setContent(place.name);
-                infowindow.open(map, this);
+                infoMap.setContent(place.name);
+                infoMap.open(appMap, this);
             });
         },
 
@@ -47,7 +59,7 @@
                 types: ['cafe']
             };
 
-            service = new google.maps.places.PlacesService(map);
+            service = new google.maps.places.PlacesService(appMap);
 
             service.nearbySearch(request, function(coffeeShops, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
@@ -69,22 +81,22 @@
         },
 
         executeResponse: function(response){
-            let nameCity = response.data.name,
+            let nameLocation = response.data.name,
                 propertiesWeather = response.data.main,
                 descriptionWeather = response.data.weather[0].description;
 
-            this.addElementNameCity(nameCity);
-            this.settingProperties(propertiesWeather, descriptionWeather);
+            this.addElementNameLocation(nameLocation);
+            this.settingPropertiesWeather(propertiesWeather, descriptionWeather);
         },
 
-        addElementNameCity: function(nameCity){
+        addElementNameLocation: function(nameLocation){
             let $elementCity = document.createElement('p');
 
-            $elementCity.innerText = nameCity + ', Colombia';
-            $nameCity.appendChild($elementCity);
+            $elementCity.innerText = nameLocation + ', Colombia';
+            $nameLocation.appendChild($elementCity);
         },
 
-        settingProperties: function(propertiesWeather, descriptionWeather){
+        settingPropertiesWeather: function(propertiesWeather, descriptionWeather){
             $temp.innerText = propertiesWeather.temp + '°C';
             $humidity.innerText = propertiesWeather.humidity + '%';
             $description.innerText = descriptionWeather;
@@ -103,4 +115,3 @@
 
         weather.getProperties(latitude, longitude);
     });
-    
